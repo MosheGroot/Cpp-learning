@@ -10,8 +10,12 @@ int main()
 	
 	// the way to brake const
 	a = (int *)&A;
-	*a = 10;
+	*a = 500;
+	std::cout << &A << std::endl;
+	std::cout << a << std::endl;
+	std::cout << A << std::endl;
 	std::cout << *a << std::endl;
+	std::cout << *(&A) << std::endl;
 
 	const int* b1 = new int; // value at the adress can't change
 	// same as int const* b1
@@ -22,6 +26,7 @@ int main()
 	*b2 = 5;
 
 	const int* const b3 = new int; // const pointer and value at the adress
+	(const int* const)* const b4
 	// b3 = a;
 	// *b3 = 5;
 
