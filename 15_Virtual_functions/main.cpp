@@ -15,8 +15,13 @@ public:
 	Player(const std::string& name)
 		: m_Name(name) {}
 
-	std::string GetName() { return m_Name; }
+	std::string Getname() override { return m_Name; }
 };
+
+void Print(Entity* ent)
+{
+	std::cout << ent->GetName() << std::endl;
+}
 
 int main()
 {
@@ -26,7 +31,8 @@ int main()
 	Player p("Name");
 	std::cout << p.GetName() << std::endl;
 
-	Entity* entity = &p;
-	std::cout << entity->GetName() << std::endl;
+	Print(&e);
+	Print(&p);
+
 	return (0);
 }

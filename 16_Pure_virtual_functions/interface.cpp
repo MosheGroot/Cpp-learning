@@ -6,12 +6,14 @@ public:
 	virtual std::string GetClassName() = 0;
 };
 
+
 class Entity : public Printable
 {
 public:
 	virtual std::string GetName() { return "Entity";}
 	std::string GetClassName() { return "Entity";}
 };
+
 
 class Player : public Entity
 {
@@ -25,13 +27,18 @@ public:
 	std::string GetClassName() {return "Player";}
 };
 
+
 void Print(Printable *obj)
 {
 	std::cout << obj->GetClassName() << std::endl;
 }
 
+
 int main()
 {
+	Printable a;
+	Print(&a);
+
 	Entity e;
 	Player p("Name");
 	
